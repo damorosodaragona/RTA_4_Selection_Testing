@@ -17,4 +17,4 @@ To run the test in WhatTest:
             so set this two strings one as the path of "whatTestProcjectForTesting/put/production/p" and the second one as the path of "whatTestProcjectForTesting/put/production/p"
 ```
             
-    If you want run Junit4Test, open the java file TestSelectorJunit4 in Junit4Test in WhatTest project and follow instruction 2a, 3a. (so find that constants and methods in TestSelectorJunit4 and set it as explained).
+ If you want run Junit4Test, open the java file TestSelectorJunit4 in Junit4Test in WhatTest project and follow instruction 2a, 3a. (so find that constants and methods in TestSelectorJunit4 and set it as explained).
