@@ -1,17 +1,17 @@
-package test;
+
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
+import sootTest.sootexample;
 
 import static junit.framework.TestCase.fail;
 
 public class setUpChannge {
     @Before
     public void setUp(){
-       new ArrayList<>();
+        sootexample sc = new sootexample();
+
     }
 
     @Test
@@ -21,8 +21,6 @@ public class setUpChannge {
 
     @Test
     public void toAddForChangeInSetUpDifferent(){
-        Assert.assertTrue(true);
+        Assert.fail();
     }
-
-
 }

@@ -1,13 +1,16 @@
-package test;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import sootTest.sootexample;
 
+import java.util.ArrayList;
+
 
 public class sootexampleTest {
     sootexample st;
+
 
     @Before
     public void setUp() {
@@ -17,11 +20,18 @@ public class sootexampleTest {
 
     @Test
     public void test1() {
+
         st.d();
     }
 
+
     @Test
     public void test2() {
+        st.c();
+    }
+
+    @Test
+    public void test2_2() {
         st.c();
     }
 
@@ -32,25 +42,15 @@ public class sootexampleTest {
     }
 
     @Test
-    public void test2_2() {
-        st.c();
-    }
-
-    @Test
     public void testInit() {
         st = new sootexample();
 
     }
-    @Test
-    public void test4() {
-        st = new sootexample();
-
-    }
-
 
     @Test
     public void testDifferenceInAPrivateMethod() {
         st.differenceInPrivateMethod();
+
     }
 
     @Test
@@ -62,6 +62,24 @@ public class sootexampleTest {
     public void testDifferentNameOfAVariable() {
         st.methodWithDifferenceInVariableName();
 
+    }
+
+    @Test
+    public void testNewMethod() {
+        st.newMethod();
+
+    }
+
+    @Test
+    public void realPassTest() {
+        ArrayList<String> a = st.realMethodToTest();
+        Assert.assertTrue(a.contains("real"));
+    }
+
+    @Test
+    public void realFailureTest() {
+        ArrayList<String> a = st.realMethodToTest();
+        Assert.assertTrue(a.contains("fail"));
     }
 
     @Test
@@ -109,7 +127,7 @@ public class sootexampleTest {
 
     @Test
     public void differentTest() {
-        int x = 8;
+        int x = 4;
         boolean condition = false;
         if (x >= 6) {
             condition = true;
@@ -123,6 +141,13 @@ public class sootexampleTest {
         st.oneMethodTested();
         st.secondMethodTested();
     }
+
+    @After
+    public void tearDown(){
+
+    }
+
+
 }
 
 

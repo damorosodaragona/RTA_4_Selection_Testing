@@ -1,11 +1,15 @@
-package test;
-
+import org.junit.Before;
 import org.junit.Test;
 import sootTest.sootexample;
 
 import java.util.ArrayList;
 
 public abstract class AbstractTestClass {
+    @Before
+    public void setUp(){
+
+    }
+
     @Test
     public abstract void abstractMethod();
 

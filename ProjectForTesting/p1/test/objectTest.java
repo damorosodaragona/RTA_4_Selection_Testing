@@ -1,4 +1,4 @@
-package test;
+
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,7 +22,17 @@ public class objectTest {
     }
 
     @Test
+    public void testGetStaticField() {
+        assertEquals("final field", object.getStaticField());
+
+    }
+
+    @Test
     public void testFoo() {
         assertEquals(1, ob.foo());
+
     }
+
+
+
 }
