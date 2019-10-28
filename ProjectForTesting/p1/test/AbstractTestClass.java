@@ -36,4 +36,13 @@ public abstract class AbstractTestClass {
         sootexample sc = new sootexample();
         ArrayList k = new ArrayList();
     }
+
+    @Test
+    public void concreteDifferentMethodThatTestDifferentMethodNotOverrided(){ new sootexample().c();}
+
+    @Test
+    public void concreteMethodThatTestDifferentMethodNotOverrided(){
+        new sootexample().c();
+    }
+
 }
