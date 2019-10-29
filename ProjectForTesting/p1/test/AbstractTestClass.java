@@ -45,4 +45,10 @@ public abstract class AbstractTestClass {
         new sootexample().c();
     }
 
+    @Test
+    public void concreteMethodOverriddenNotTaggedWithTest(){
+        sootexample sc = new sootexample();
+        sc.c();
+    }
+
 }

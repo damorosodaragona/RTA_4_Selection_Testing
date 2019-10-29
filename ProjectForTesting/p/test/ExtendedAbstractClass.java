@@ -28,4 +28,10 @@ public class ExtendedAbstractClass extends AbstractTestClass {
     public void abstractMethodThatTestDifferentMethod() {
         sootexample.differentStaticFinalMethod();
     }
+
+    @Override
+    public void concreteMethodOverriddenNotTaggedWithTest(){
+        sootexample sc = new sootexample();
+        sc.c();
+    }
 }
