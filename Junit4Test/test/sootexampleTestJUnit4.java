@@ -1,26 +1,25 @@
-
-import org.junit.jupiter.api.*;
+import org.junit.*;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-public class sootexampleTestJUnit5 {
+public class sootexampleTestJUnit4 {
     ArrayList<String> a;
 
-    @BeforeEach
+    @Before
     public void init() {
         a = new ArrayList<>();
         a.add("pass");
     }
 
-    @BeforeEach
+    @Before
     public void setUp() {
         a = new ArrayList<>();
         a.add("pass");
     }
 
-    @BeforeAll
+    @BeforeClass
     public static void beforeAll() {
     }
 
@@ -31,10 +30,9 @@ public class sootexampleTestJUnit5 {
 
     @Test
     public void succeedingGroupedTest() {
-        assertAll("a",
-                () -> assertTrue(a.contains("pass")),
-                () -> assertFalse(a.contains("groupedPass")));
 
+         assertTrue(a.contains("pass"));
+         assertFalse(a.contains("groupedPass"));
         assertTrue(a.contains("pass"));
     }
 
@@ -44,37 +42,33 @@ public class sootexampleTestJUnit5 {
     }
 
     @Test
-    @Disabled("for demonstration purposes")
+    @Ignore("for demonstration purposes")
     void skippedTest() {
         // not executed
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         a.remove("pass");
         ;
     }
 
-    @AfterAll
+    @AfterClass
     public static void tearDownAll() {
         fail("only for demostration");
     }
 
     @Test
     public void dependentFailAssertion() {
-        assertAll("a",
-                () -> {
+
                     assertNotNull(a);
                     assertTrue(a.contains("pass"));
-                },
-                () -> {
+
                     assertTrue(a.contains("fail"));
-                    assertAll("a",
-                            () -> assertNotNull(a.get(2)),
-                            () -> assertEquals("fail", a.get(2))
-                    );
-                }
-        );
+
+                   assertNotNull(a.get(2));
+                   assertEquals("fail", a.get(2));
+
 
     }
 
@@ -87,12 +81,12 @@ public class sootexampleTestJUnit5 {
     }
 
 
-    @BeforeEach
+    @Before
     public void setUpOverride(){
 
     }
 
-    @AfterEach
+    @After
     public void tearDownOverride(){
 
     }
@@ -104,19 +98,15 @@ public class sootexampleTestJUnit5 {
     @Test
     public void dependentPassAssertion() {
         a.add("fail");
-        assertAll("a",
-                () -> {
+
                     assertNotNull(a);
                     assertTrue(a.contains("pass"));
-                },
-                () -> {
+
                     assertTrue(a.contains("fail"));
-                    assertAll("a",
-                            () -> assertNotNull(a.get(1)),
-                            () -> assertEquals("fail", a.get(1))
-                    );
-                }
-        );
+
+                    assertNotNull(a.get(1));
+                    assertEquals("fail", a.get(1));
+
 
     }
 
