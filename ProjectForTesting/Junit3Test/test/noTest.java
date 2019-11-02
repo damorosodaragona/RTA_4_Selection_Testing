@@ -22,6 +22,19 @@ public class noTest extends extendedTestClass {
 
     }
 
+    public int test4(int i ) {
+
+        return i;
+    }
+    public int test4( ) {
+
+        return 0;
+    }
+    private int test5(String i ) {
+
+        return 0;
+    }
+
     @Override
     public void test1(String s){
 
