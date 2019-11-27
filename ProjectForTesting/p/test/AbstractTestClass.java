@@ -36,7 +36,7 @@ public abstract class AbstractTestClass {
 
     }
     @Test
-    public void concreteDifferentMethodThatTestDifferentMethodNotOverrided(){ new sootexample().differenceInPrivateMethod();}
+    public void concreteDifferentMethodThatTestDifferentMethodNotOverrided(){ new sootexample().c();}
 
 
     @Test

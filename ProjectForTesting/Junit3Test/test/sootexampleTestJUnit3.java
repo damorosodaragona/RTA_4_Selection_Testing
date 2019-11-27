@@ -8,7 +8,7 @@ public class sootexampleTestJUnit3 extends TestCase {
 
 
 
-    public void testFail() {
+    public void testFail()  {
         Assert.assertEquals(1, i);
     }
 

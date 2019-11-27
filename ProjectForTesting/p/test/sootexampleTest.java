@@ -1,5 +1,3 @@
-
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -42,6 +40,7 @@ public class sootexampleTest {
         st = new sootexample();
 
     }
+
     @Test
     public void test4() {
         st = new sootexample();
@@ -98,7 +97,6 @@ public class sootexampleTest {
 
     @Test
     public void equalTest() {
-        st.c();
         int x = 7;
         boolean condition = false;
         if (x >= 6) {
@@ -120,14 +118,29 @@ public class sootexampleTest {
     }
 
     @Test
-    public void test2ChangedMethod(){
+    public void test2ChangedMethod() {
         st.oneMethodTested();
         st.secondMethodTested();
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
 
+    }
+
+    @Test
+    public void testCallAnotherTest_1() {
+        testCallAnotherTest_2();
+    }
+
+    @Test
+    public void testCallAnotherTest_2() {
+        testCallAnotherTest_3();
+    }
+
+    @Test
+    public void testCallAnotherTest_3() {
+        st.c();
     }
 }
 
